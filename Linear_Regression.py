@@ -8,8 +8,8 @@ import matplotlib.pyplot as plt
 
 DATASET = "./dataSet/RL_Calorias_Tiempo.csv"
 ALPHA = 0.0005
-MAX_ITERATIONS = 10000
-CONVERGENCE_TOLERANCE = 0.001
+MAX_ITERATIONS = 100
+CONVERGENCE_TOLERANCE = 0.01
 
 
 def print_results(a, b, error):
@@ -61,7 +61,7 @@ def is_convergence(a, b, a_old, b_old, convergence):
 
 def linear_regression(dataset, iterations, convergence):
     # Read data set
-    samples = pd.read_table(dataset, engine='python', sep='::')
+    samples = pd.read_csv(dataset)
 
     # Random parameters
     a, b = (random.randrange(-10, 10),) * 2
